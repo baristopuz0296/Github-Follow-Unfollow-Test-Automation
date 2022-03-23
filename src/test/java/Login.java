@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
         public static String loginUrl = "https://github.com/";
         @Before
         public void setUp() {
-            System.setProperty("webdriver.chrome.driver", "C:/Users/PC/IdeaProjects/TESTOTOMASYON/Driver/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "/Driver/chromedriver.exe");
             driver = new ChromeDriver();
             driver.manage().window().maximize();
         }
@@ -22,15 +22,15 @@ import java.util.concurrent.TimeUnit;
             TimeUnit.SECONDS.sleep(1);
             driver.findElement(By.xpath("/html/body/div[1]/header/div/div[2]/div[2]/div[2]/a")).click();
             TimeUnit.SECONDS.sleep(1);
-            driver.findElement(By.id("login_field")).sendKeys("baristpz0296@gmail.com");
+            driver.findElement(By.id("login_field")).sendKeys("YOUR E-MAİL");
             TimeUnit.SECONDS.sleep(1);
-            driver.findElement(By.id("password")).sendKeys("32466352153Brs");
+            driver.findElement(By.id("password")).sendKeys("YOUR PASSWORD");
             TimeUnit.SECONDS.sleep(1);
             driver.findElement(By.name("commit")).click();
             TimeUnit.SECONDS.sleep(1);
             Assert.assertEquals(driver.getTitle(), "GitHub");
             TimeUnit.SECONDS.sleep(1);
-            driver.findElement(By.name("q")).sendKeys("cengisan");
+            driver.findElement(By.name("q")).sendKeys("USERNAME");
             TimeUnit.SECONDS.sleep(1);
             driver.findElement(By.xpath("//*[@id=\"jump-to-suggestion-search-global\"]/a/div[3]")).click();
             TimeUnit.SECONDS.sleep(1);
@@ -42,7 +42,7 @@ import java.util.concurrent.TimeUnit;
             TimeUnit.SECONDS.sleep(2);
             driver.findElement(By.xpath("//*[@id=\"js-pjax-container\"]/div[2]/div/div[1]/div/div[2]/div[3]/div[1]/div/div/span/form[2]")).click();
             TimeUnit.SECONDS.sleep(2);
-            Assert.assertEquals(driver.getTitle(), "cengisan");
+            Assert.assertEquals(driver.getTitle(), "USERNAME");
             TimeUnit.SECONDS.sleep(1);
 
 
